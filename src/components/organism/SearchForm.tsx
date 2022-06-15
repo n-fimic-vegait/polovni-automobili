@@ -11,6 +11,7 @@ import { Button } from '../atoms/Button'
 import { GiBackwardTime } from 'react-icons/gi'
 import { FaInfoCircle } from 'react-icons/fa'
 import { MdDirectionsCar, MdKeyboardArrowRight } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 type SearchInputs = {
   brand: string
@@ -142,12 +143,12 @@ export const SearchForm = () => {
             <label> Garancija </label>
           </div>
           <div className='w-full flex md:justify-start justify-end'>
-            <a
-              href='/najnoviji-oglasi'
+            <Link
+              to='/najnoviji-oglasi'
               className='text-blue-600 flex items-center gap-1'
             >
               <GiBackwardTime size='1.2em' /> Najnoviji oglasi
-            </a>
+            </Link>
           </div>
         </div>
         <Button
@@ -165,12 +166,12 @@ export const SearchForm = () => {
       </div>
       <div className='flex md:flex-row flex-col gap-3 mb-6 text-sm items-center'>
         <div className='w-full'>
-          <a
-            href='/novi-automobili'
+          <Link
+            to='/novi-automobili'
             className='text-blue-600 flex items-center gap-1'
           >
             <MdDirectionsCar size='1.3em' /> Novi automobili
-          </a>
+          </Link>
         </div>
         <p className='w-full font-semibold text-center'>
           Sačuvaj pretragu i ubrzaj proces kupovine

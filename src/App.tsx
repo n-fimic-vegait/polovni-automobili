@@ -1,16 +1,18 @@
 import { Header } from './components/molecules/Header'
 import { Footer } from './components/molecules/Footer'
 import { HomePage } from './pages/HomePage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <div>
-        <HomePage />
-        <Footer />
-      </div>
-    </>
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='*' element={<h1> 404 NOT FOUND </h1>} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
 

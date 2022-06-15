@@ -8,6 +8,7 @@ import logo_anniversary_car1 from './../../assets/images/logo-anniversary-car1.s
 import infostud_logo from './../../assets/images/infostud-logo.png'
 import { footerQuickLinksList } from '../../data/footerQuickLinksList'
 import { mostSearchedModelsMockData } from '../../mock/mostSearchedModelsMockData'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
@@ -21,11 +22,11 @@ export const Footer = () => {
               </h1>
               <div className='grid lg:grid-cols-3 grid-cols-2 gap-2 text-gray-400'>
                 {mostSearchedModelsMockData.map((model, index) => (
-                  <a href={`/${model}`} key={index}>
+                  <Link to={`/${model}`} key={index}>
                     <div className='text-center flex items-center justify-center bg-black p-2 hover:text-gray-200 rounded-md'>
                       {model}
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -36,7 +37,7 @@ export const Footer = () => {
               <ul className='flex flex-col gap-3 text-sm'>
                 {footerQuickLinksList.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href}> {link.name} </a>
+                    <Link to={link.href}> {link.name} </Link>
                   </li>
                 ))}
               </ul>
@@ -89,11 +90,7 @@ export const Footer = () => {
               </div>
               <div>
                 Copyright ©
-                <img
-                  src={infostud_logo}
-                  alt='infostud logo'
-                  width='80px'
-                />{' '}
+                <img src={infostud_logo} alt='infostud logo' width='80px' />
                 2000 - 2022
               </div>
             </div>

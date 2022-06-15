@@ -1,5 +1,12 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { allBrandsOptions } from '../../data/allBrandsOptions'
+import {
+  allBrandsOptions,
+  bodyMockData,
+  fuelMockData,
+  modelsMockData,
+  regionMockData,
+  yearsMockData,
+} from '../../mock/searchFormMockData'
 import { Button } from '../atoms/Button'
 import { GiBackwardTime } from 'react-icons/gi'
 import { FaInfoCircle } from 'react-icons/fa'
@@ -35,19 +42,22 @@ export const SearchForm = () => {
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className={formPartsStyle}>
-        <select
-          defaultValue={'ass'}
-          className={inputStyle}
-          {...register('brand')}
-        >
-          {allBrandsOptions()}
+        <select className={inputStyle} {...register('brand')}>
+          <option value=''> Sve marke </option>
+          {allBrandsOptions.map((brand) => (
+            <option key={brand.value} value={brand.value}>
+              {brand.name}
+            </option>
+          ))}
         </select>
 
         <select className={inputStyle} {...register('model')}>
           <option> Svi modeli </option>
-          <option> option 1 </option>
-          <option> option 2 </option>
-          <option> option 3 </option>
+          {modelsMockData.map((model) => (
+            <option key={model.value} value={model.value}>
+              {model.name}
+            </option>
+          ))}
         </select>
 
         <input
@@ -61,41 +71,47 @@ export const SearchForm = () => {
         <div className='flex w-full gap-4'>
           <select className={inputStyle} {...register('yearFrom')}>
             <option> Godište od </option>
-            <option> 2022 </option>
-            <option> 2021 </option>
-            <option> 2020 </option>
+            {yearsMockData.map((year) => (
+              <option key={year}> {year} </option>
+            ))}
           </select>
           <select className={inputStyle} {...register('yearUntil')}>
             <option> do </option>
-            <option> 2022 </option>
-            <option> 2021 </option>
-            <option> 2020 </option>
+            {yearsMockData.map((year) => (
+              <option key={year}> {year} </option>
+            ))}
           </select>
         </div>
         <div className='flex w-full gap-2 items-center'>
           <>
             <select className={inputStyle} {...register('body')}>
               <option> Karoserija </option>
-              <option> option 1 </option>
-              <option> option 2 </option>
-              <option> option 3 </option>
+              {bodyMockData.map((body) => (
+                <option key={body.value} value={body.value}>
+                  {body.name}
+                </option>
+              ))}
             </select>
             <FaInfoCircle className='text-pa-orange' size='1.3em' />
           </>
         </div>
         <select className={inputStyle} {...register('fuel')}>
           <option> Gorivo </option>
-          <option> option 1 </option>
-          <option> option 2 </option>
-          <option> option 3 </option>
+          {fuelMockData.map((fuel) => (
+            <option key={fuel.value} value={fuel.value}>
+              {fuel.name}
+            </option>
+          ))}
         </select>
       </div>
       <div className={formPartsStyle}>
         <select className={inputStyle + ' h-fit'} {...register('region')}>
           <option> Region </option>
-          <option> option 1 </option>
-          <option> option 2 </option>
-          <option> option 3 </option>
+          {regionMockData.map((region) => (
+            <option key={region.value} value={region.value}>
+              {region.name}
+            </option>
+          ))}
         </select>
         <select className={inputStyle + ' h-fit'} {...register('condition')}>
           <option> Polovna i nova vozila </option>
@@ -167,9 +183,11 @@ export const SearchForm = () => {
         <p className='md:w-2/3 w-full font-semibold text-lg text-center'>
           POGLEDAJ AKTUELNU PONUDU
         </p>
-        <Button className='flex items-center justify-center p-1 my-0 md:w-1/3 w-full font-semibold text-white text-md bg-gradient-to-r from-blue-800 to-blue-400'>
+        <Button
+          iconRight={<MdKeyboardArrowRight size='2em' />}
+          className='flex items-center justify-center p-1 my-0 md:w-1/3 w-full font-semibold text-white text-md bg-gradient-to-r from-blue-800 to-blue-400'
+        >
           <span> DANI NOVIH VOZILA </span>
-          <MdKeyboardArrowRight size='2em' />
         </Button>
       </div>
     </form>

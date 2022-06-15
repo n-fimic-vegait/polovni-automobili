@@ -1,6 +1,6 @@
 import { Button } from '../atoms/Button'
 import vodicZaKupovinu from './../../assets/images/vodicZaKupovinu.png'
-import novi_zdravstveno_ad from './../../assets/images/novi_zdravstveno_ad.png'
+import novi_zdravstveno_ad from './../../mock/images/novi_zdravstveno_ad.png'
 
 export const CarBuyingGuidePreview = () => {
   return (

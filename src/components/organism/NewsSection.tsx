@@ -1,5 +1,5 @@
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { newsMockData } from '../../data/newsMockData'
+import { newsMockData } from '../../mock/newsMockData'
 import videoSaveti from './../../assets/images/videoSaveti.png'
 
 export const NewsSection = () => {
@@ -40,7 +40,7 @@ export const NewsSection = () => {
           Saveti i vesti
         </h1>
         <div className='flex gap-8'>
-          <div className='w-1/2 flex flex-col justify-between'>
+          <div className='md:flex hidden w-1/2 flex-col justify-between'>
             <div>
               <a href='/vest'>
                 <img
@@ -60,7 +60,7 @@ export const NewsSection = () => {
             </div>
           </div>
 
-          <div className='w-1/2 flex flex-col justify-between'>
+          <div className='md:w-1/2 w-full flex flex-col justify-between'>
             <div>
               {newsMockData.map((news, index) => (
                 <div key={index}>

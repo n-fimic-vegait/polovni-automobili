@@ -6,17 +6,23 @@ import { SidemenuOption } from '../atoms/SidemenuOption'
 export const SidemenuOptions = () => {
   return (
     <ul className='text-lg'>
-      <SidemenuOption iconLeft={<BsHouseFill />}> Naslovna </SidemenuOption>
-      <SidemenuOption iconLeft={<FaEdit />}> Postavi oglas </SidemenuOption>
-      <SidemenuOption> Moj profil </SidemenuOption>
-      <SidemenuOption> Sačuvane pretrage </SidemenuOption>
-      <SidemenuOption> Ponuda za oglašavanje </SidemenuOption>
-      <SidemenuOption> Usluge i krediti </SidemenuOption>
-      <SidemenuOption> Prodajem </SidemenuOption>
-      <SidemenuOption> Brza pretraga </SidemenuOption>
-      <SidemenuOption> Saveti, vesti i video </SidemenuOption>
-      <SidemenuOption iconLeft={<BiExport />}> Auto osiguranje </SidemenuOption>
-      <SidemenuOption> Moja garaža </SidemenuOption>
+      <SidemenuOption href='' iconLeft={<BsHouseFill />}>
+        Naslovna
+      </SidemenuOption>
+      <SidemenuOption href='' iconLeft={<FaEdit />}>
+        Postavi oglas
+      </SidemenuOption>
+      <SidemenuOption href=''> Moj profil </SidemenuOption>
+      <SidemenuOption href=''> Sačuvane pretrage </SidemenuOption>
+      <SidemenuOption href=''> Ponuda za oglašavanje </SidemenuOption>
+      <SidemenuOption href=''> Usluge i krediti </SidemenuOption>
+      <SidemenuOption href=''> Prodajem </SidemenuOption>
+      <SidemenuOption href=''> Brza pretraga </SidemenuOption>
+      <SidemenuOption href=''> Saveti, vesti i video </SidemenuOption>
+      <SidemenuOption href='' iconLeft={<BiExport />}>
+        Auto osiguranje
+      </SidemenuOption>
+      <SidemenuOption href=''> Moja garaža </SidemenuOption>
     </ul>
   )
 }

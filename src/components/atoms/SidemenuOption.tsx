@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
 interface SidemenuOptionProps extends React.LiHTMLAttributes<HTMLLIElement> {
   className?: string
@@ -17,9 +18,9 @@ export const SidemenuOption: FC<SidemenuOptionProps> = ({
 }) => {
   return (
     <li className={className + ' hover:bg-gray-600 flex items-center gap-1'}>
-      <a href={href} className='py-2 px-3 w-full'>
+      <Link to={href} className='py-2 px-3 w-full'>
         {iconLeft} {children} {iconRight}
-      </a>
+      </Link>
     </li>
   )
 }

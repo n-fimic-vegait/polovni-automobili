@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { ICar } from '../../model/ICar'
+import { Link } from 'react-router-dom'
 
 interface CarPreviewProps {
   car: ICar
@@ -8,8 +9,8 @@ interface CarPreviewProps {
 
 export const CarPreview: FC<CarPreviewProps> = ({ car, discount }) => {
   return (
-    <a
-      href='/carId'
+    <Link
+      to='/carId'
       style={{ boxShadow: '2px 2px 10px gray' }}
       className='rounded-lg bg-white h-full'
     >
@@ -44,6 +45,6 @@ export const CarPreview: FC<CarPreviewProps> = ({ car, discount }) => {
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }

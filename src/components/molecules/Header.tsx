@@ -6,6 +6,7 @@ import { Sidemenu } from '../organism/Sidemenu'
 import { useState } from 'react'
 import { Button } from '../atoms/Button'
 import { SocialIconsList } from '../atoms/SocialIconsList'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   const [showSidemenu, setShowSidemenu] = useState(false)
@@ -19,7 +20,9 @@ export const Header = () => {
       <div className='bg-gray-800 text-white'>
         <div className='flex justify-between lg:p-3 px-3 py-1 mx-auto max-w-screen-xl'>
           <div className='flex items-center'>
-            <img className='lg:w-16 w-10 mr-3' src={logo} alt='logo' />
+            <Link to=''>
+              <img className='lg:w-16 w-10 mr-3' src={logo} alt='logo' />
+            </Link>
             <img
               className='lg:w-44 w-28'
               src={eighteenYears}
@@ -31,8 +34,8 @@ export const Header = () => {
           </div>
           <div>
             <div className='hidden lg:flex items-center text-sm gap-6'>
-              <a
-                href='/login'
+              <Link
+                to='/login'
                 className='flex items-center gap-1 hover:text-pa-orange'
               >
                 <div>
@@ -40,10 +43,10 @@ export const Header = () => {
                   <span className='text-xs'> Moj profil </span>
                 </div>
                 <RiArrowDownSFill className='text-pa-orange' size='1.5em' />
-              </a>
-              <a href='/registracija' className='hover:text-pa-orange'>
+              </Link>
+              <Link to='/registracija' className='hover:text-pa-orange'>
                 REGISTRUJ SE
-              </a>
+              </Link>
               <Button className='bg-baby-blue px-4 py-3 rounded-md hover:opacity-90 text-shadow'>
                 POSTAVI OGLAS
               </Button>
